@@ -13,9 +13,12 @@ class TasksController extends Controller
     public function create() {
         return view('tasks.create');
     }
+
+    public function store() {
+        return request()->all();
+    }
 }
 
-// Replace the homepage
 // Handle the tasks submission data
 // Create a task
 // Display a list of tasks
