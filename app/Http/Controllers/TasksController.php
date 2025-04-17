@@ -11,7 +11,7 @@ class TasksController extends Controller
     public function index() {
 
         // Retrieve all of the tasks when we visit the homepage
-        $tasks = Task::orderBy('completed_at')->get();
+        $tasks = Task::latest()->get();
 
         // Display / Render all of the tasks that we have
 
@@ -45,9 +45,22 @@ class TasksController extends Controller
 
         return redirect('/');
     }
+
+    // Delete a task
+    public function delete($id) {
+        $task = Task::where('id', $id)->first();
+
+        $task->delete();
+
+        return redirect('/');
+    }
+
+    // Delete ALL tasks
+    public function deleteAll() {
+        Task::query()->delete();
+
+        return redirect('/');
+    }
 }
 
 
-
-// Divide the tasks into completed and uncompleted secttion
-// Delete a tasks permanently
