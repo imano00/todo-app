@@ -11,7 +11,7 @@ class TasksController extends Controller
     public function index() {
 
         // Retrieve all of the tasks when we visit the homepage
-        $tasks = Task::get();
+        $tasks = Task::latest()->get();
 
         // Display / Render all of the tasks that we have
 
@@ -27,7 +27,7 @@ class TasksController extends Controller
     }
 
     public function store() {
-        $task = Task::create([
+        Task::create([
             'description' => request('description'),
         ]);
 
