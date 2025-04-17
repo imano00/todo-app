@@ -1,35 +1,23 @@
-<html>
+@extends('layouts.app')
 
-    <head>
+@section('content')
+    <h1>New Task</h1>
 
-        <title>Todo App</title>
-            
-        <link rel="stylesheet"  href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" />
+    <form method="POST" action="/task">
 
-    </head>
+        <div class="form-group">
 
-    <body>
+            <label for="description">Task Description</label>
+            <input class="form-control" name="description" />
 
-        <h1>New Task</h1>
+        </div>
 
-        <form method="POST" action="/task">
+        <div class="form-group">
 
-            <div class="form-group">
+            <button type="submit" class="btn btn-primary">Create Task</button>
 
-                <label for="description">Task Description</label>
-                <input class="form-control" name="description" />
-
-            </div>
-
-            <div class="form-group">
-
-                <button type="submit" class="btn btn-primary">Create Task</button>
-
-            <div>
+        <div>
 
 
-        </form>
-
-    </body>
-
-</html>
+    </form>
+@endsection
