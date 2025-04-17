@@ -10,8 +10,11 @@
 
 <div class="card" style="margin-bottom: 20px">
     <div class="card-body">
-        {{ $task->description }}
-        <a href="btn">Complete</a>
+        <p>{{ $task->description }}</p>
+        <form action="/tasks/{{ $task->id }}" method="POST">
+            @method('PATCH')
+            @csrf
+            <button class="btn btn-light" input="submit">{{ $task->id }} Complete</button>
     </div>
 </div>
 
