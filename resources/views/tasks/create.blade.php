@@ -6,7 +6,7 @@
     <form method="POST" action="/task">
 
         <div class="form-group">
-
+            @csrf
             <label for="description">Task Description</label>
             <input class="form-control" name="description" />
 
