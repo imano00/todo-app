@@ -66,7 +66,7 @@ class TasksController extends Controller
     }
 
     // Delete ALL tasks
-    public function deleteAll($id) {
+    public function deleteAll() {
         DB::table('tasks')->delete();
 
         return redirect('/');
