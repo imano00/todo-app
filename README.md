@@ -14,6 +14,7 @@ Instruction on how to install the TO-DO App
    php artisan key:generate
 
 5. Set up your database (preferable to use MYSQL):
+   - Preferable if you have XAMPP installed in your system.
    - Open .env file
    - Update DB_DATABASE, DB_USERNAME, DB_PASSWORD with your local database info
 
