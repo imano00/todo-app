@@ -6,6 +6,8 @@ use App\Models\Task;
 
 use Illuminate\Http\Request;
 
+use Illuminate\Support\Facades\DB;
+
 class TasksController extends Controller
 {
     public function index() {
@@ -27,6 +29,11 @@ class TasksController extends Controller
     }
 
     public function store() {
+        request()->validate([
+            'description' => 'required | max:255',
+        ]);
+
+        // Create a new task
         Task::create([
             'description' => request('description'),
         ]);
@@ -48,16 +55,19 @@ class TasksController extends Controller
 
     // Delete a task
     public function delete($id) {
-        $task = Task::where('id', $id)->first();
+        if($id != null) {
+            $task = Task::where('id', $id)->first();
 
-        $task->delete();
+            $task->delete();
 
+        }
+        
         return redirect('/');
     }
 
     // Delete ALL tasks
-    public function deleteAll() {
-        Task::query()->delete();
+    public function deleteAll($id) {
+        DB::table('tasks')->delete();
 
         return redirect('/');
     }
