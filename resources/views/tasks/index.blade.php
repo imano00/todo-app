@@ -36,7 +36,7 @@
     @method('DELETE')
     @csrf
     <div class="d-grid gap-2 pb-3">
-        <button class="btn btn-danger" input="submit">Delete All</button>
+        <button class="btn btn-danger" type="submit">Delete All</button>
     </div>
 </form>
 @endif --}}
