@@ -1,13 +1,13 @@
 Instruction on how to install the TO-DO App
 
 1. Clone the repo:
-   git clone https://github.com/your-name/your-laravel-project.git
+   git clone (https://github.com/imano00/todo-app.git)
    cd your-laravel-project
 
 2. Install dependencies:
    composer install
 
-3. Copy the .env file:
+3. Copy the .env file (make sure the env file is the actual env file, not .env example:
    cp .env.example .env
 
 4. Generate app key:
