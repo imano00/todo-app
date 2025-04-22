@@ -5,7 +5,6 @@
 <form method="POST" action="/tasks">
     @csrf
     <div class="form-group">
-
         <h1 for="description" style="margin-bottom: 20px; margin-top: 20px">Task Description</h1>
         @if($errors->any())
         <div class="alert alert-danger" role="alert">
@@ -56,7 +55,7 @@
         <form action="/tasks/{{ $task->id }}" method="POST">
             @method('PATCH')
             @csrf
-            <button class="btn btn-light" input="submit">Complete</button>
+            <button class="btn btn-dark btn-outline-primary" input="submit">Complete</button>
         </form>
 
         @else
@@ -64,7 +63,7 @@
         <form action="/tasks/{{ $task->id }}" method="POST">
             @method('DELETE')
             @csrf
-            <button class="btn btn-danger" input="submit">Delete</button>
+            <button class="btn btn-danger btn-outline-danger" input="submit">Delete</button>
         </form>
         @endif
     </div>
