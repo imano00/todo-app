@@ -1,4 +1,4 @@
-<html>
+<html data-bs-theme="dark">
 
 <head>
 
@@ -9,7 +9,6 @@
 </head>
 
 <body>
-
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
         <div class="container-fluid">
             <a class="navbar-brand" href="/">Iman Todo App</a>
@@ -31,9 +30,7 @@
     </nav>
 
     <div class="container">
-
         @yield('content')
-
     </div>
 </body>
 
