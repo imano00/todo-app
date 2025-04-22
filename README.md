@@ -7,7 +7,7 @@ Instruction on how to install the TO-DO App
 2. Install dependencies:
    composer install
 
-3. Copy the .env file (make sure the env file is the actual env file, not .env example:
+3. Copy the .env file (make sure the env file is the actual env file, not .env example):
    cp .env.example .env
 
 4. Generate app key:
