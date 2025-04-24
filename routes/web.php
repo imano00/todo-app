@@ -14,15 +14,15 @@ use App\Http\Controllers\TasksController;
 |
 */
 
-Route::get('/', [TasksController::class, 'index']);
-// Route::get('/tasks', [TasksController::class, 'index']);
+// TaskController
 
-Route::get('/tasks/create', [TasksController::class, 'create']);
+Route::controller(TasksController::class)->group(function () {
+    Route::get('/', 'index');
+    Route::get('/tasks/create', 'create');
+    Route::post('/tasks', 'store');
+    Route::patch('/tasks/{id}', 'update');
+    Route::delete('/tasks/{id}', 'delete');
+    Route::delete('/tasks/delete-all', 'deleteAll');
 
-Route::post('/tasks', [TasksController::class, 'store']);
+});
 
-Route::patch('/tasks/{id}', [TasksController::class, 'update']);
-
-Route::delete('/tasks/{id}', [TasksController::class, 'delete']);
-
-Route::delete('/tasks/delete-all', [TasksController::class, 'deleteAll']);
